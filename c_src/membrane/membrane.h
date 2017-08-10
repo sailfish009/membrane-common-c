@@ -4,8 +4,12 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <erl_nif.h>
+
 #ifdef __GNUC__
 #include <stdint.h>
+#elif _WIN32
+typedef __int32 int32_t;
+typedef unsigned __int32 uint32_t;
 #endif
 
 // varargs parse helpers
